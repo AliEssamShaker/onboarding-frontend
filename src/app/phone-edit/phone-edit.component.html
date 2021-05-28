@@ -1,0 +1,19 @@
+<div *ngIf="phone">
+    <h2>Edit {{phone.phoneNumber}} details</h2>
+    <div><span>id: </span>{{phone.phoneId}}</div>
+    <div>
+        <label>phoneNumber: </label>
+        <input [(ngModel)]="phone.phoneNumber"/>
+    </div>
+    
+</div>
+  
+  <div>
+    <button (click)="save(phone)">
+      Save
+    </button>
+    <button (click)="goBack(phone)">
+      goBack
+    </button>
+  </div>
+  

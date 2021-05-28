@@ -1,0 +1,19 @@
+<div *ngIf="user">
+  <h2>{{user.firstName}} 's details</h2>
+  <div><span>id: </span>{{user.userId}}</div>
+  <div><span>firstName: </span>{{user.firstName}}</div>
+  <div><span>lastName: </span>{{user.lastName}}</div>
+  <div><span>userName: </span>{{user.username}}</div>
+</div>
+
+<div>
+  <button (click)="getPhones(user)">
+    Get Phones
+  </button>
+  <button (click)="edit(user)">
+    Edit
+  </button>
+  <button (click)="goBack()">
+    goBack
+  </button>
+</div>

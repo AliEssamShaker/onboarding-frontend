@@ -1,0 +1,55 @@
+<div>
+    <h2>Create a new user</h2>
+    <div [hidden]="submitted" >
+      <form [fromGroup]="usersaveform" #saveUser (ngSubmit)="saveUser(saveUser)">
+        <div>
+          <label>firstName: </label>
+          <input formControlName="firstName"/>
+
+          <div *ngIf = "(firstName.touched) && (firstName.invalid)">  
+                  <span *ngIf="firstName.errors.required">first Name is Required</span>  
+                    <span *ngIf = "firstName.errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+          </div>  
+        </div>
+
+
+        <div>
+          <label>lastName: </label>
+          <input formControlName="lastName"/>
+
+          <div *ngIf = "(lastName.touched) && (lastName.invalid)">  
+                  <span *ngIf="lastName.errors.required">last Name is Required</span>  
+                    <span *ngIf = "lastName.errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+          </div>  
+        </div>
+
+
+        <div>
+          <label>userName: </label>
+          <input formControlName="username"/>
+
+          <div *ngIf = "(username.touched) && (username.invalid)">  
+                  <span *ngIf="username.errors.required">username is Required</span>  
+                    <span *ngIf = "username.errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+          </div>  
+        </div>
+        <button type="submit">Submit</button>  
+      </form>
+    </div>  
+  
+    
+  </div>
+  
+  <div>
+    
+    <button (click)="goBack()">
+      goBack
+    </button>
+  </div>
+  

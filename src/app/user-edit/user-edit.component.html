@@ -1,0 +1,31 @@
+<div *ngIf="user">
+    <h2>Edit {{user.firstName}} 's details</h2>
+    <div><span>id: </span>{{user.userId}}</div>
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>firstName: </label>
+        <input fromControlName="firstName" placeholder="firstName" name="firstName" />
+      </div>
+      <br/>
+      <div>
+        <label>lastName: </label>
+        <input fromControlName="firstName" placeholder="lastName" name="lastName" />
+      </div>
+      <br/>
+      <div>
+        <label>userName: </label>
+        <input fromControlName="firstName" placeholder="userName" name="userName" />
+      </div>
+      <br/>
+      <button>
+        Save
+      </button>
+    </form> 
+</div>
+  
+<div>
+  <button (click)="goBack()">
+    goBack
+  </button>
+</div>
+  

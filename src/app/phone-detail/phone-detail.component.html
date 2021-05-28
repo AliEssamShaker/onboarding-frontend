@@ -1,0 +1,32 @@
+<div *ngIf="phone">
+    <h2>{{phone.phoneNumber}} details</h2>
+    <div><span>id: </span>{{phone.phoneId}}</div>
+    <div><span>phoneNumber: </span>{{phone.phoneNumber}}</div>
+    <div><span>verification status: </span>{{phone.isVerified}}</div>
+  </div>
+
+
+
+  
+    <div>
+      <div *ngIf="!setKey">
+        <button (click)="initiateVerification(phone)">Get Key</button>
+      </div>
+      <div>
+        <input>
+        <button (click)="completeVerification()">verify</button>
+      </div>
+    </div>
+  
+
+
+
+  <div>
+    <button (click)="updatePhone(phone)">
+      Edit
+    </button>
+    <button (click)="goBack(phone)">
+      goBack
+    </button>
+  </div>
+  

@@ -1,0 +1,22 @@
+<h2>Users</h2>
+
+<ul class="users">
+    <li *ngFor="let user of users">
+      
+      <span>{{user.userId}}</span> {{user.firstName}}
+      <button (click)="view(user)">
+        View details
+      </button>
+      <button (click)="edit(user)">
+        Edit
+      </button>
+      <button class="delete" title="delete user"
+        (click)="delete(user)">x</button>
+    </li>
+</ul>
+
+<div>
+  <button (click)="create()">
+    Add new user
+  </button>
+</div>
