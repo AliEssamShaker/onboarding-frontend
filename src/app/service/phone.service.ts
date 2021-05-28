@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 import {PhoneModel} from "../model/phone.model";
-import { PhoneVerificationModel } from '../model/phoneVerification.model';
+import {PhoneVerificationModel} from '../model/phoneVerification.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,9 @@ import { PhoneVerificationModel } from '../model/phoneVerification.model';
 export class PhoneService {
 
   private BASE_URI = "/api/v1/users/";
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
 
   createPhone(phone: PhoneModel): Observable<PhoneModel> {
     const url = `${this.BASE_URI}/${phone.userId}/phones`
@@ -39,16 +41,18 @@ export class PhoneService {
     return this.http.delete<PhoneModel>(`url`);
   }
 
-  initiateVerification(phone: PhoneModel): Observable<PhoneVerificationModel>{
+  initiateVerification(phone: PhoneModel): Observable<PhoneVerificationModel> {
     const url = `${this.BASE_URI}/${phone.userId}/phones/${phone.phoneId}/initiateVerification`;
     return this.http.post<PhoneVerificationModel>(url, phone)
   }
 
-  completeVerification(phone: PhoneModel, phoneVerification: PhoneVerificationModel): Observable<PhoneVerificationModel>{
-    const url = `${this.BASE_URI}/${phone.userId}/phones/${phone.phoneId}/completeVerification`;
-    return this.http.post<PhoneVerificationModel>(url, phoneVerification)
+  completeVerification(userId: string, phoneId: string, code: string): Observable<PhoneVerificationModel> {
+    const url = `${this.BASE_URI}/${userId}/phones/${phoneId}/completeVerification`;
+    const body = {
+      code: code
+    };
+    return this.http.post<PhoneVerificationModel>(url, body);
   }
 
-  
 
 }

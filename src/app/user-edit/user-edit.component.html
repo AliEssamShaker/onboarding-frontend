@@ -1,31 +1,31 @@
-<div *ngIf="user">
-    <h2>Edit {{user.firstName}} 's details</h2>
-    <div><span>id: </span>{{user.userId}}</div>
-    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+<div>
+    <h2>Edit {{firstName}} 's details</h2>
+    <div><span>id: </span>{{userId}}</div>
+    <form [formGroup]="formGroup" (ngSubmit)="save()">
       <div>
         <label>firstName: </label>
-        <input fromControlName="firstName" placeholder="firstName" name="firstName" />
+        <input formControlName="firstName" placeholder="firstName" name="firstName" />
       </div>
       <br/>
       <div>
         <label>lastName: </label>
-        <input fromControlName="firstName" placeholder="lastName" name="lastName" />
+        <input formControlName="firstName" placeholder="lastName" name="lastName" />
       </div>
       <br/>
       <div>
         <label>userName: </label>
-        <input fromControlName="firstName" placeholder="userName" name="userName" />
+        <input formControlName="firstName" placeholder="userName" name="userName" />
       </div>
       <br/>
-      <button>
-        Save
-      </button>
-    </form> 
+
+    </form>
 </div>
-  
-<div>
-  <button (click)="goBack()">
-    goBack
+
+<div class="flex items-center">
+  <button (click)="save()" class="btn-primary">
+    Save
+  </button>
+  <button (click)="back()" class="btn-secondary ml-2">
+    Back
   </button>
 </div>
-  

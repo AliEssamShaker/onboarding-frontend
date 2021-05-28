@@ -1,3 +1,3 @@
 export class PhoneVerificationModel {
-    verifivationKey : string;
+    code : string;
 }

@@ -1,9 +1,10 @@
-import { Component, OnInit  } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PhoneModel } from '../model/phone.model';
-import { UserModel } from '../model/user.model';
-import { PhoneService } from '../service/phone.service';
-import { UserService } from '../service/user.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {PhoneModel} from '../model/phone.model';
+import {PhoneService} from '../service/phone.service';
+import {UserModel} from "../model/user.model";
+import {forkJoin, Subscription} from "rxjs";
+import {UserService} from "../service/user.service";
 
 @Component({
   selector: 'app-phones',
@@ -12,24 +13,35 @@ import { UserService } from '../service/user.service';
 })
 export class PhonesComponent implements OnInit {
 
-  phones : PhoneModel[] = [];
-  constructor(
-      private phoneService: PhoneService,
-      private router: Router, 
-      private route: ActivatedRoute ) { }
+  phones: PhoneModel[] = [];
+  user: UserModel;
+  loadingSubscription = Subscription.EMPTY;
 
-  ngOnInit(): void {
-    this.getAllPhones()
+
+  constructor(
+    private phoneService: PhoneService,
+    private userService: UserService,
+    private router: Router,
+    private route: ActivatedRoute) {
   }
 
-  getAllPhones(): void {
+  ngOnInit(): void {
+    this.registerRouteParameterChanges();
+  }
+
+  registerRouteParameterChanges(): void {
     this.route.paramMap.subscribe(params => {
       const userId = params.get("userId");
-      if (userId !== null){
-        this.phoneService.findAllPhones(userId).subscribe(phones => (this.phones = phones));
+      if (userId) {
+        this.loadingSubscription = forkJoin([
+          this.phoneService.findAllPhones(userId),
+          this.userService.get(userId)]
+        ).subscribe(([phones, user]) => {
+          this.phones = phones;
+          this.user = user;
+        });
       }
-    })
-    
+    });
   }
 
   deletePhone(phone: PhoneModel): void {
@@ -38,9 +50,5 @@ export class PhonesComponent implements OnInit {
 
   createPhone(): void {
     this.router.navigateByUrl("/users/");
-
   }
-
-
-
 }

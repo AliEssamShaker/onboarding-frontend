@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { UserModel } from '../model/user.model';
-import { UserService } from '../service/user.service';
-import { FormGroup, FormBuilder } from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {UserService} from '../service/user.service';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-user-edit',
@@ -11,37 +10,51 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 })
 export class UserEditComponent implements OnInit {
 
-  user: UserModel | undefined;
+  formGroup = this.createFormGroup();
 
   constructor(private router: Router,
     private route: ActivatedRoute,
     private userService: UserService,
     private formBuilder: FormBuilder) { }
 
-  // createForm: FormGroup 
   ngOnInit(): void {
-    this.getUser();
+    this.registerRouteParameterChanges();
   }
 
-  getUser(): void {
+  private createFormGroup(): FormGroup {
+    return this.formBuilder.group({
+      userId: '',
+      firstName: '',
+      lastName: '',
+      username: ''
+    });
+  }
+
+  registerRouteParameterChanges(): void {
     this.route.paramMap.subscribe(params => {
       const userId = params.get("userId");
-      // this.userService.get(userId).subscribe(user => (this.user = user));
-      if (userId !== null ){
-        this.userService.get(userId).subscribe(user => (this.user = user));
-      } 
+      if (userId) {
+        this.userService.get(userId).subscribe(user => {
+          this.formGroup.patchValue(user);
+        });
+      }
     });
-    
   }
-      
-  goBack(): void {
-    this.router.navigateByUrl("/users");
+
+  get firstName(): string | null {
+    return this.formGroup.get("firstName").value;
+  }
+
+  get userId(): string | null {
+    return this.formGroup.get("userId").value;
   }
 
   save(): void {
-    if (this.user) {
-      this.userService.update(this.user).subscribe(() => this.goBack());
-    }
+    const valueToSave = this.formGroup.value;
+    this.userService.update(valueToSave).subscribe(() => this.back());
   }
 
+  back(): void {
+    this.router.navigateByUrl("/users");
+  }
 }

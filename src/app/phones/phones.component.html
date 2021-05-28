@@ -1,23 +1,23 @@
+<div *ngIf="!loadingSubscription.closed">
+  FANCY LOADING SPINNER
+</div>
+<div *ngIf="user && loadingSubscription.closed">
 
-<div *ngIf="user"> 
+  <h2>{{user.firstName}}'s phones</h2>
 
-  <h2> {{user.firstName}}'s phones </h2>
-
-<ul class="phones">
+  <ul class="phones">
     <li *ngFor="let phone of phones">
       <a routerLink="/users/{{phone.userId}}/phones/{{phone.phoneId}}">
         <span>{{phone.phoneId}}</span> {{phone.phoneNumber}}
       </a>
       <button class="deletePhone" title="delete phone"
-        (click)="deletePhone(phone)">x</button>
+              (click)="deletePhone(phone)">x
+      </button>
     </li>
-</ul>
-
-</div>
-
-<div>
-  <button (click)="createPhone()">
-    Add new phone
-  </button>
-  
+  </ul>
+  <div>
+    <button (click)="createPhone()">
+      Add new phone
+    </button>
+  </div>
 </div>

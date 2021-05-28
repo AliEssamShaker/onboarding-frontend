@@ -6,7 +6,7 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PhonesComponent } from './phones/phones.component';
 import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
-import { AppRoutingModule } from './app-rouitng.module';
+import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule } from '@angular/common/http';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { PhoneEditComponent } from './phone-edit/phone-edit.component';
@@ -26,14 +26,14 @@ import { ChangeHistoryComponent } from './change-history/change-history.componen
     PhoneEditComponent,
     UserCreateComponent,
     ChangeHistoryComponent,
-    
+
   ],
   imports: [
     BrowserModule,
-    FormsModule, 
-    AppRoutingModule, 
+    FormsModule,
+    AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
