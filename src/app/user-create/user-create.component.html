@@ -1,26 +1,25 @@
 <div>
-  <h2>Create a new user</h2>
+  <h2 class="text-2xl mb-4">Create a new user</h2>
   <div>
-    <form [formGroup]="formGroup" (ngSubmit)="save()">
+    <form [formGroup]="formGroup" (ngSubmit)="save()" class="grid gap-4 grid-cols-1">
       <div>
-        <label>First name: </label>
+        <label class="block">First name: </label>
         <input formControlName="firstName"/>
       </div>
       <div>
-        <label>Last name: </label>
+        <label class="block">Last name: </label>
         <input formControlName="lastName"/>
       </div>
       <div>
-        <label>Username: </label>
+        <label class="block">Username: </label>
         <input formControlName="username"/>
       </div>
-      <button type="submit">Submit</button>
+      <div class="flex items-center">
+        <button type="submit" class="btn-primary">Create</button>
+        <button (click)="back()" class="ml-2 btn-secondary">Back</button>
+      </div>
     </form>
   </div>
 </div>
 
-<div>
-  <button (click)="back()">
-   Back
-  </button>
-</div>
+
