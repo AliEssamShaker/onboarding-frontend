@@ -13,6 +13,7 @@ import { PhoneEditComponent } from './phone-edit/phone-edit.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { ChangeHistoryComponent } from './change-history/change-history.component';
+import { PhoneCreateComponent } from './phone-create/phone-create.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ChangeHistoryComponent } from './change-history/change-history.componen
     PhoneEditComponent,
     UserCreateComponent,
     ChangeHistoryComponent,
+    PhoneCreateComponent,
 
   ],
   imports: [

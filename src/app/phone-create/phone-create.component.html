@@ -1,0 +1,23 @@
+<div>
+    <h2 class="text-2xl mb-4">Create a new phone</h2>
+    <div>
+      <form [formGroup]="formGroup" (ngSubmit)="save()" class="grid gap-4 grid-cols-1">
+        <div>
+          <label class="block">Phone Number: </label>
+          <input formControlName="phoneNumber"/>
+        </div>
+        <div>
+            <label class="block">Type: </label>
+            <input formControlName="phoneType"/>
+          </div>
+        
+        <div class="flex items-center">
+          <button type="submit" class="btn-primary">Create</button>
+          <button (click)="back()" class="ml-2 btn-secondary">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  

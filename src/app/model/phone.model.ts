@@ -11,4 +11,5 @@ export class PhoneModel {
   userId: string;
   phoneNumber: string;
   isVerified: boolean;
+  phoneType: String;
 }
