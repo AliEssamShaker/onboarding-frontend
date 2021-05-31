@@ -33,6 +33,6 @@ export class UserService {
 
   delete(userId: string): Observable<UserModel> {
     const url = `${this.BASE_URI}/${userId}`;
-    return this.http.delete<UserModel>(`url`);
+    return this.http.delete<UserModel>(url);
   }
 }

@@ -10,6 +10,6 @@ export class ChangeHistoryModel {
   updatedFirstName: string; 
   previousLastName: string;
   updatedLastName: string; 
-  timeStamp: string;
+  timeStamp: Date;
     
   }

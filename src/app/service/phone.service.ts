@@ -38,7 +38,7 @@ export class PhoneService {
 
   deletePhone(phone: PhoneModel): Observable<PhoneModel> {
     const url = `${this.BASE_URI}/${phone.userId}/phones/${phone.phoneId}`
-    return this.http.delete<PhoneModel>(`url`);
+    return this.http.delete<PhoneModel>(url);
   }
 
   initiateVerification(phone: PhoneModel): Observable<PhoneVerificationModel> {
