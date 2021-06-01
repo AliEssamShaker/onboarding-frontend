@@ -44,11 +44,15 @@ export class PhonesComponent implements OnInit {
     });
   }
 
-  deletePhone(phone: PhoneModel): void {
-    this.phoneService.deletePhone(phone).subscribe();
+  deletePhone(phoneId: string, userId: string): void {
+    this.phoneService.deletePhone(phoneId, userId).subscribe();
   }
 
   createPhone(): void {
-    this.router.navigateByUrl("/users/");
+    this.route.paramMap.subscribe(params => {
+      const userId = params.get("userId");
+      this.router.navigateByUrl("/users/"+userId+"/phones/create");
+    })
+    
   }
 }

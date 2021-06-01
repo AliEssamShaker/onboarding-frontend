@@ -11,7 +11,7 @@
         <span>{{phone.phoneId}}</span> {{phone.phoneNumber}}
       </a>
       <button class="deletePhone" title="delete phone"
-              (click)="deletePhone(phone)">x
+              (click)="deletePhone(phone.phoneId, phone.userId)">x
       </button>
     </li>
   </ul>

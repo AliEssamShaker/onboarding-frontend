@@ -4,15 +4,15 @@
       <form [formGroup]="formGroup" (ngSubmit)="save()" class="grid gap-4 grid-cols-1">
         <div>
           <label class="block">Phone Number: </label>
-          <input formControlName="phoneNumber"/>
+          <input formControlName="phoneNumber" placeholder="306*******"/>
         </div>
         <div>
             <label class="block">Type: </label>
-            <input formControlName="phoneType"/>
+            <input formControlName="phoneType" placeholder="eg cell"/>
           </div>
         
         <div class="flex items-center">
-          <button type="submit" class="btn-primary">Create</button>
+          <button type="submit" class="btn-primary">Create Phone</button>
           <button (click)="back()" class="ml-2 btn-secondary">Back</button>
         </div>
       </form>

@@ -45,9 +45,17 @@ export class UserEditComponent implements OnInit {
     return this.formGroup.get("firstName").value;
   }
 
+  get lastName(): string | null {
+    return this.formGroup.get("lastName").value;
+  }
+
+  get username(): string | null {
+    return this.formGroup.get("username").value;
+  }
   get userId(): string | null {
     return this.formGroup.get("userId").value;
   }
+
 
   save(): void {
     const valueToSave = this.formGroup.value;

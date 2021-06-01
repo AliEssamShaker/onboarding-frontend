@@ -1,4 +1,4 @@
-<div *ngIf="phone">
+<!-- <div *ngIf="phone">
     <h2>Edit {{phone.phoneNumber}} details</h2>
     <div><span>id: </span>{{phone.phoneId}}</div>
     <div>
@@ -17,3 +17,32 @@
     </button>
   </div>
   
+
+   -->
+
+
+   <div>
+    <h2>Edit the {{phoneNumber}} phone</h2>
+    <div><span>id: </span>{{phoneId}}</div>
+    <form [formGroup]="formGroup" (ngSubmit)="save()">
+      <div>
+        <label>Phone Number: </label>
+        <input formControlName="phoneNumber"  name="phoneNumber" />
+      </div>
+      <br/>
+      <div>
+        <label>Phone Type: </label>
+        <input formControlName="phoneType" name="phoneType" />
+      </div>
+      <br/>
+    </form>
+</div>
+
+<div class="flex items-center">
+  <button (click)="save()" class="btn-primary">
+    Save
+  </button>
+  <button (click)="back()" class="btn-secondary ml-2">
+    Back
+  </button>
+</div>

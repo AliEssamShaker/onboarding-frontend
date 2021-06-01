@@ -44,7 +44,7 @@ export class PhoneDetailComponent implements OnInit {
 
   initiateVerification(): void {
     this.setKey = true;
-    this.phoneService.initiateVerification(this.phone).subscribe();
+    this.phoneService.initiateVerification(this.phone.phoneId, this.phone.userId).subscribe();
   }
 
   completeVerification(): void {

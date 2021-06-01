@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserModel } from '../model/user.model';
 import { PhoneService } from '../service/phone.service';
 
 @Component({
@@ -31,16 +32,23 @@ export class PhoneCreateComponent{
   
   save(): void {
     const valueToSave = this.formGroup.value;
-
-    this.phoneService.createPhone(valueToSave)
+    this.route.paramMap.subscribe(params => {
+      this.phoneService.createPhone(valueToSave, params.get("userId"))
       .subscribe(data => {
         this.back();
         console.log(data)
       }, error => console.log(error));
+    })
+    
   }
+  
 
   back(): void {
-    this.router.navigateByUrl("/users/${phone.userId}/phones");
+    this.route.paramMap.subscribe(params => {
+      const userId = params.get("userId");
+      this.router.navigateByUrl("/users/"+userId+"/phones");
+    })
+    
   }
 
 }
