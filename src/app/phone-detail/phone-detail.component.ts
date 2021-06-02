@@ -12,7 +12,7 @@ import {FormControl} from "@angular/forms";
 export class PhoneDetailComponent implements OnInit {
 
   setKey = false;
-  phone: PhoneModel | undefined;
+  phone: PhoneModel;
   verificationFormControl = new FormControl();
 
   constructor(private router: Router,

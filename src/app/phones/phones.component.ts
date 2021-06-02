@@ -55,4 +55,8 @@ export class PhonesComponent implements OnInit {
     })
     
   }
+
+  back(): void {
+    this.router.navigateByUrl("/users/"+this.user.userId);
+  }
 }

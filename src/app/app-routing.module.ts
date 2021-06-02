@@ -9,7 +9,9 @@ import {PhonesComponent} from './phones/phones.component';
 import {PhoneDetailComponent} from './phone-detail/phone-detail.component';
 import {PhoneEditComponent} from './phone-edit/phone-edit.component';
 import {ChangeHistoryComponent} from './change-history/change-history.component';
+import {ChangeHistoryDetailComponent} from './change-history-detail/change-history-detail.component';
 import {PhoneCreateComponent} from './phone-create/phone-create.component';
+
 
 
 const routes: Routes = [
@@ -22,7 +24,8 @@ const routes: Routes = [
   {path: 'users/:userId/phones/create', component: PhoneCreateComponent},
   {path: 'users/:userId/phones/:phoneId', component: PhoneDetailComponent},
   {path: 'users/:userId/phones/:phoneId/edit', component: PhoneEditComponent},
-  {path: 'users/:userId/changes-history', component: ChangeHistoryComponent}
+  {path: 'users/:userId/changes-history', component: ChangeHistoryComponent},
+  {path: 'users/:userId/changes-history/:versionId', component: ChangeHistoryDetailComponent},
 ];
 
 @NgModule({

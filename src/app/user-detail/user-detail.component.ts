@@ -34,6 +34,10 @@ export class UserDetailComponent implements OnInit {
     this.router.navigateByUrl("/users");
   }
 
+  changeHistory(): void {
+    this.router.navigateByUrl("users/"+this.user.userId+"/change-history");
+  }
+
   edit(user: UserModel): void {
     this.router.navigateByUrl("/users/" + user.userId + "/edit");
   }

@@ -14,6 +14,7 @@ import { UserCreateComponent } from './user-create/user-create.component';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { ChangeHistoryComponent } from './change-history/change-history.component';
 import { PhoneCreateComponent } from './phone-create/phone-create.component';
+import { ChangeHistoryDetailComponent } from './change-history-detail/change-history-detail.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { PhoneCreateComponent } from './phone-create/phone-create.component';
     UserCreateComponent,
     ChangeHistoryComponent,
     PhoneCreateComponent,
+    ChangeHistoryDetailComponent,
 
   ],
   imports: [

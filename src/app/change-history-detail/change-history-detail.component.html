@@ -1,0 +1,17 @@
+<div *ngIf="changeHistory">
+    <h2>Version {{changeHistory.versionId}} details</h2>
+    <span>{{changeHistory.previousFirstName}}</span>
+    <span>{{changeHistory.updatedFirstName}}</span>
+    <span>{{changeHistory.previousLastName}}</span>
+    <span>{{changeHistory.updatedLastName}}</span>
+    <span>{{changeHistory.previousUsername}}</span>
+    <span>{{changeHistory.updatedUsername}}</span>
+    <span>{{changeHistory.timeStamp}}</span>
+</div>
+
+<div>
+    <button (click)="back()">
+        Back
+    </button>
+</div>
+  

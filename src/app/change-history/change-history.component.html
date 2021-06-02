@@ -1,1 +1,23 @@
-<p>change-history works!</p>
+<div *ngIf="user && loadingSubscription.closed">
+    <h2>{{user.firstName}}'s changes history</h2>
+    <ul class="changeHistories">
+        <li *ngFor="let changeHistory of changeHistories">
+            
+            <span>{{changeHistory.versionId}}</span> 
+            <span>{{changeHistory.previousFirstName}}</span>
+            <span>{{changeHistory.updatedFirstName}}</span>
+            <button (click)="view(changeHistory)">
+            View details
+            </button>
+            
+        </li>
+    </ul>
+</div>
+
+<div>
+    <button (click)="back()">
+        Back
+    </button>
+</div>
+
+
