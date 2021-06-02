@@ -99,7 +99,13 @@ export class PhoneEditComponent implements OnInit {
   }
 
   back(): void {
-    this.router.navigateByUrl("/users");
+    this.route.paramMap.subscribe(params => {
+      const userId = params.get("userId");
+      this.router.navigateByUrl("/users/"+userId+"/phones/");
+    })
+    
+    
+    
   }
 
 }

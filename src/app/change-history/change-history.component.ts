@@ -42,7 +42,11 @@ export class ChangeHistoryComponent implements OnInit {
     }
 
     back(): void {
-      this.router.navigateByUrl("/users/" + this.user.userId);
+      this.route.paramMap.subscribe(params => {
+        const userId = params.get("userId");
+        this.router.navigateByUrl("/users/" +userId );
+      })
+      
     }
 
 }

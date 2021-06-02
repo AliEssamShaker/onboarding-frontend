@@ -35,7 +35,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   changeHistory(): void {
-    this.router.navigateByUrl("users/"+this.user.userId+"/change-history");
+    this.router.navigateByUrl("users/"+this.user.userId+"/change-history")
   }
 
   edit(user: UserModel): void {

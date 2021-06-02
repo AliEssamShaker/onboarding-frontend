@@ -7,7 +7,7 @@
 
   <ul class="phones">
     <li *ngFor="let phone of phones">
-      <a routerLink="/users/{{phone.userId}}/phones/{{phone.phoneId}}">
+      <a routerLink="/users/{{user.userId}}/phones/{{phone.phoneId}}/">
         <span>{{phone.phoneId}}</span> {{phone.phoneNumber}}
       </a>
       <button class="deletePhone" title="delete phone"

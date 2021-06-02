@@ -13,7 +13,7 @@ export class ChangeHistoryService {
 
   findAllChangeHistory(userId: string): Observable<ChangeHistoryModel[]> {
     const url = `${this.BASE_URI}/${userId}/changes-history`
-    return this.http.get<ChangeHistoryModel[]>(this.BASE_URI);
+    return this.http.get<ChangeHistoryModel[]>(url);
   }
 
   getChangeHistory(versionId: string, userId: string): Observable<ChangeHistoryModel> {

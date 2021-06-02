@@ -35,11 +35,20 @@ export class PhoneDetailComponent implements OnInit {
   }
 
   back(): void {
-    this.router.navigateByUrl("/users/" + this.phone.userId + "/phones/");
+    this.route.paramMap.subscribe(params => {
+      const userId = params.get("userId");
+      this.router.navigateByUrl("/users/" + userId + "/phones/");
+    })
+    
   }
 
   updatePhone(): void {
-    this.router.navigateByUrl("/users/" + this.phone.userId + "/phones/" + this.phone.phoneId)
+    this.route.paramMap.subscribe(params => {
+      const userId = params.get("userId");
+      const phoneId = params.get("phoneId");
+      this.router.navigateByUrl("/users/" + userId + "/phones/" + phoneId+"/edit");
+    })
+    
   }
 
   initiateVerification(): void {
