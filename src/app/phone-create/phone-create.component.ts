@@ -12,7 +12,7 @@ import { PhoneService } from '../service/phone.service';
 export class PhoneCreateComponent{
 
   formGroup: FormGroup = this.createFormGroup();
-
+  user: UserModel;
   constructor(private router: Router,
               private route: ActivatedRoute,
               private phoneService: PhoneService,

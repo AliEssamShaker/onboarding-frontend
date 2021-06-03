@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PhoneModel } from '../model/phone.model';
+import { UserModel } from '../model/user.model';
 import { PhoneService } from '../service/phone.service';
 
 @Component({
@@ -44,6 +45,7 @@ export class PhoneEditComponent implements OnInit {
   // }
 
   formGroup = this.createFormGroup();
+  user: UserModel;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -57,7 +59,7 @@ export class PhoneEditComponent implements OnInit {
   private createFormGroup(): FormGroup {
     return this.formBuilder.group({
       phoneId:'',
-      userId: '',
+      userId: this.user.userId,
       phoneNumber:'',
       isVerified:false,
       phoneType:'',

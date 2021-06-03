@@ -1,25 +1,25 @@
 <div *ngIf="phone">
-  <h2>{{phone.phoneNumber}} details</h2>
-  <div><span>Id: </span>{{phone.phoneId}}</div>
-  <div><span>Phone Number: </span>{{phone.phoneNumber}}</div>
-  <div><span>Verification status: </span>{{phone.isVerified}}</div>
+  <h2 class="page-title">phone number {{phone.phoneNumber}} details</h2>
+  <div><label class="label">phone Id: </label> <span class="label-content">{{phone.phoneId}}</span></div>
+  <div><label class="label">Phone Number: </label> <span class="label-content">{{phone.phoneNumber}}</span> </div>
+  <div><label class="label">Verification status: </label> <span class="label-content">{{phone.isVerified}}</span> </div>
 
   <div>
     <div *ngIf="!setKey">
-      <button (click)="initiateVerification()">Get Key</button>
+      <button class="btn-creation my-5" (click)="initiateVerification()">Get Key</button>
     </div>
     <div>
       <input [formControl]="verificationFormControl">
-      <button (click)="completeVerification()">Verify</button>
+      <button class="btn-primary ml-2" (click)="completeVerification()">Verify</button>
     </div>
   </div>
 
 
   <div>
-    <button (click)="updatePhone()">
+    <button  class="btn-edit mr-2" (click)="updatePhone()">
       Edit
     </button>
-    <button (click)="back()">
+    <button class="btn-view " (click)="back()">
       Back
     </button>
   </div>

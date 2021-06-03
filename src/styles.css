@@ -39,7 +39,7 @@ input {
 }
 
 .items-box {
-  @apply rounded flex flex-wrap bg-gray-100 my-5 mx-auto;
+  @apply rounded flex flex-wrap bg-gray-100 p-3 my-5 mx-auto;
 }
 
 .item-box {

@@ -44,8 +44,21 @@ export class PhonesComponent implements OnInit {
     });
   }
 
+  viewPhone(phone: PhoneModel): void {
+    this.router.navigateByUrl("/users/"+this.user.userId+"/phones/"+phone.phoneId);
+  }
+
+  editPhone(phone: PhoneModel): void {
+    this.router.navigateByUrl("/users/"+this.user.userId+"/phones/"+phone.phoneId+"/edit");
+  }
+
   deletePhone(phoneId: string, userId: string): void {
     this.phoneService.deletePhone(phoneId, userId).subscribe();
+    this.refresh();
+  }
+
+  refresh(): void {
+    this.router.navigateByUrl("/user/"+this.user.userId+"/phones");
   }
 
   createPhone(): void {
@@ -55,6 +68,7 @@ export class PhonesComponent implements OnInit {
     })
     
   }
+
 
   back(): void {
     this.router.navigateByUrl("/users/"+this.user.userId);

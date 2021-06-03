@@ -1,36 +1,13 @@
-<!-- <div *ngIf="phone">
-    <h2>Edit {{phone.phoneNumber}} details</h2>
-    <div><span>id: </span>{{phone.phoneId}}</div>
-    <div>
-        <label>phoneNumber: </label>
-        <input [(ngModel)]="phone.phoneNumber"/>
-    </div>
-    
-</div>
-  
-  <div>
-    <button (click)="save(phone)">
-      Save
-    </button>
-    <button (click)="goBack(phone)">
-      goBack
-    </button>
-  </div>
-  
+<div>
+    <h2 class="page-title">Edit phone number {{phoneNumber}} info</h2>
 
-   -->
-
-
-   <div>
-    <h2>Edit the {{phoneNumber}} phone</h2>
-    <div><span>id: </span>{{phoneId}}</div>
     <form [formGroup]="formGroup" (ngSubmit)="save()">
       <div>
-        <label>Phone Number: </label>
+        <label class="label">Phone Number: </label>
         <input formControlName="phoneNumber"  name="phoneNumber" />
       </div>
       <br/>
-      <div>
+      <div class="label">
         <label>Phone Type: </label>
         <input formControlName="phoneType" name="phoneType" />
       </div>
