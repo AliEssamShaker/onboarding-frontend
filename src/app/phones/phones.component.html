@@ -3,7 +3,7 @@
 </div>
 <div *ngIf="user && loadingSubscription.closed">
 
-  <h2>{{user.firstName}}'s phones</h2>
+  <h2 class="page-title">{{user.firstName}}'s phones</h2>
 
   <ul class="phones">
     <li *ngFor="let phone of phones">
@@ -16,11 +16,11 @@
     </li>
   </ul>
   <div>
-    <button (click)="createPhone()">
+    <button class="btn-creation mr-2" (click)="createPhone()">
       Add new phone
     </button>
 
-    <button (click)="back()">
+    <button class="btn-view" (click)="back()">
       Back
     </button>
   </div>

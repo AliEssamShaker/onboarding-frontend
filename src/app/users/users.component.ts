@@ -27,6 +27,7 @@ export class UsersComponent implements OnInit {
 
   delete(user: UserModel): void {
     this.userService.delete(user.userId).subscribe();
+    this.back();
   }
 
   create(): void {
@@ -59,6 +60,10 @@ export class UsersComponent implements OnInit {
       }
     });
 
+  }
+
+  back(): void {
+    this.router.navigateByUrl("/users");
   }
 
 

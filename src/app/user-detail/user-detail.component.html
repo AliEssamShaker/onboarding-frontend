@@ -1,22 +1,22 @@
 <div *ngIf="user">
-  <h2>{{user.firstName}} 's details</h2>
-  <div><span>id: </span>{{user.userId}}</div>
-  <div><span>firstName: </span>{{user.firstName}}</div>
-  <div><span>lastName: </span>{{user.lastName}}</div>
-  <div><span>userName: </span>{{user.username}}</div>
+  <h2 class="page-title">{{user.firstName}} 's details</h2>
+  <div class="item-box" ><div class="label">id: </div><span class="label-content">{{user.userId}}</span></div>
+  <div class="item-box"><div class="label">first name: </div><span class="label-content">{{user.firstName}}</span></div>
+  <div class="item-box"><div class="label">last name: </div><span class="label-content">{{user.lastName}}</span></div>
+  <div class="item-box"><div class="label">username: </div><span class="label-content">{{user.username}}</span></div>
 </div>
 
-<div>
-  <button (click)="getPhones(user)">
+<div class="group-buttons">
+  <button class="btn-primary mr-2" (click)="getPhones(user)">
     Get Phones
   </button>
-  <button (click)="edit(user)">
+  <button class="btn-edit mr-2" (click)="edit(user)">
     Edit
   </button>
-  <button (click)="goBack()">
+  <button class="btn-view mr-2" (click)="goBack()">
     goBack
   </button>
-  <button (click)="changeHistory()">
+  <button class="btn-creation mr-2" (click)="changeHistory()">
     Changes History
   </button>
 </div>

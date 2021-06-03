@@ -1,22 +1,32 @@
-<h2>Users</h2>
+<div class="page-container">
+
+
+<h1 class="page-title" >Users</h1>
 
 <ul class="users">
-    <li *ngFor="let user of users">
+    <li *ngFor="let user of users" class="items-box">
       
-      <span>{{user.userId}}</span> {{user.firstName}}
-      <button (click)="view(user)">
-        View details
-      </button>
-      <button (click)="edit(user)">
-        Edit
-      </button>
-      <button class="delete" title="delete user"
-        (click)="delete(user)">x</button>
+      <div class="label">id : </div> <span class="label-content">{{user.userId}}</span>
+      <div class="label" >first name:</div> <span>{{user.firstName}}</span>
+      
+      <div class="group-buttons">
+        <button (click)="view(user)" class="btn-view mx-1">
+          View details
+        </button>
+        <button (click)="edit(user)" class="btn-edit mx-1">
+          Edit
+        </button>
+        <button class="delete" class="btn-delete mx-1" title="delete user"
+          (click)="delete(user)">x</button>
+      </div>
+      
     </li>
 </ul>
 
 <div>
-  <button (click)="create()">
+  <button (click)="create()" class="btn-creation my-5">
     Add new user
   </button>
+</div>
+
 </div>

@@ -7,9 +7,53 @@ input {
 }
 
 .btn-primary {
-  @apply rounded px-3 py-2 bg-blue-500 cursor-pointer text-sm shadow-sm outline-none text-white;
+  @apply rounded px-3 py-2 bg-blue-500 cursor-pointer text-sm shadow-sm outline-none text-white hover:bg-blue-600;
+}
+
+.btn-creation {
+  @apply rounded px-5 py-2 bg-green-500 cursor-pointer text-sm shadow-sm outline-none text-white hover:bg-green-600;
 }
 
 .btn-secondary {
   @apply rounded px-3 py-2 cursor-pointer text-sm outline-none text-blue-500;
+}
+
+.btn-delete {
+  @apply rounded px-3 py-2 bg-red-500 cursor-pointer text-sm outline-none text-white hover:bg-red-600;
+}
+
+.btn-edit {
+  @apply rounded px-3 py-2 bg-yellow-500 cursor-pointer text-sm outline-none text-white hover:bg-yellow-600;
+}
+
+.btn-view {
+  @apply rounded px-3 py-2 bg-purple-500 cursor-pointer text-sm outline-none text-white hover:bg-purple-600;
+}
+
+.page-title {
+  @apply font-serif text-4xl text-gray-800 text-left mb-10;
+}
+
+.page-container {
+  @apply container mx-auto my-auto;
+}
+
+.items-box {
+  @apply rounded flex flex-wrap bg-gray-100 my-5 mx-auto;
+}
+
+.item-box {
+  @apply my-5 mr-5;
+}
+
+.label {
+  @apply font-bold text-xl mr-5;
+}
+
+.label-content {
+  @apply mr-5;
+}
+
+.group-buttons {
+  @apply ml-auto;
 }
