@@ -33,7 +33,10 @@ export class PhoneCreateComponent{
   save(): void {
     const valueToSave = this.formGroup.value;
     this.route.paramMap.subscribe(params => {
-      this.phoneService.createPhone(valueToSave, params.get("userId"))
+      const userId = params.get("userId");
+      console.log(valueToSave);
+      valueToSave["userId"] = userId
+      this.phoneService.createPhone(valueToSave, userId)
       .subscribe(data => {
         this.back();
         console.log(data)

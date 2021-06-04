@@ -29,7 +29,7 @@ export class UserCreateComponent {
 
   save(): void {
     const valueToSave = this.formGroup.value;
-
+    console.log(valueToSave)
     this.userService.create(valueToSave)
       .subscribe(data => {
         this.back();

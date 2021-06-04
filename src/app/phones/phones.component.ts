@@ -54,12 +54,8 @@ export class PhonesComponent implements OnInit {
 
   deletePhone(phoneId: string, userId: string): void {
     this.phoneService.deletePhone(phoneId, userId).subscribe();
-    this.refresh();
   }
 
-  refresh(): void {
-    this.router.navigateByUrl("/user/"+this.user.userId+"/phones");
-  }
 
   createPhone(): void {
     this.route.paramMap.subscribe(params => {

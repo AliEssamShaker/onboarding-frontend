@@ -45,7 +45,7 @@ export class PhoneEditComponent implements OnInit {
   // }
 
   formGroup = this.createFormGroup();
-  user: UserModel;
+  user: UserModel | undefined;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -59,7 +59,7 @@ export class PhoneEditComponent implements OnInit {
   private createFormGroup(): FormGroup {
     return this.formBuilder.group({
       phoneId:'',
-      userId: this.user.userId,
+      userId: '',
       phoneNumber:'',
       isVerified:false,
       phoneType:'',
@@ -71,6 +71,8 @@ export class PhoneEditComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const phoneId = params.get("phoneId");
       const userId = params.get("userId");
+      console.log(phoneId);
+      console.log(userId);
       if (phoneId) {
         this.phoneService.getPhone(phoneId, userId).subscribe(phone => {
           this.formGroup.patchValue(phone);
@@ -90,6 +92,12 @@ export class PhoneEditComponent implements OnInit {
   get phoneId(): string | null {
     return this.formGroup.get("phoneId").value;
   }
+
+  get userId(): string | null {
+    return this.formGroup.get("userId").value;
+  }
+
+
 
   save(): void {
     this.route.paramMap.subscribe(params =>{
