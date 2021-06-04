@@ -2,21 +2,21 @@
     <h2 class="page-title" >Edit {{firstName}} 's details</h2>
   
     <form [formGroup]="formGroup" (ngSubmit)="save()">
-      <div>
+      <div class="items-box">
         <label class="label">First Name: </label>
         <input formControlName="firstName" placeholder="firstName" name="firstName" />
       </div>
-      <br/>
-      <div>
+      <!-- <br/> -->
+      <div class="items-box">
         <label class="label">Last Name: </label>
         <input formControlName="lastName" placeholder="lastName" name="lastName" />
       </div>
-      <br/>
-      <div>
+      <!-- <br/> -->
+      <div class="items-box">
         <label class="label">User Name: </label>
         <input formControlName="username" placeholder="username" name="username" />
       </div>
-      <br/>
+      <!-- <br/> -->
 
     </form>
 </div>
