@@ -41,12 +41,12 @@ export class PhoneService {
     return this.http.delete<PhoneModel>(url);
   }
 
-  initiateVerification(phoneId: string, userId: string): Observable<PhoneVerificationModel> {
+  initiateVerification(userId: string, phoneId: string ): Observable<PhoneVerificationModel> {
     const url = `${this.BASE_URI}/${userId}/phones/${phoneId}/initiateVerification`;
     return this.http.post<PhoneVerificationModel>(url, phoneId)
   }
 
-  completeVerification(phoneId: string, userId: string, code: string): Observable<PhoneVerificationModel> {
+  completeVerification(userId: string, phoneId: string  ,code: string): Observable<PhoneVerificationModel> {
     const url = `${this.BASE_URI}/${userId}/phones/${phoneId}/completeVerification`;
     const body = {
       code: code

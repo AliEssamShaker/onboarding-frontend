@@ -8,7 +8,7 @@
   <ul class="phones">
     <li *ngFor="let phone of phones" class="items-box">
       
-      <div *ngIf="user.userId == phone.userId"> 
+      <div> 
         <label class="label">phone id : </label> <span class="label-content">{{phone.phoneId}}</span> 
         <label class="label">phone number : </label> <span class="label-content">{{phone.phoneNumber}}</span>  
         <label class="label">user id : </label><span class="label-content">{{phone.userId}}</span>
